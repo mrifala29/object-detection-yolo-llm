@@ -4,7 +4,7 @@ from ultralytics import YOLO
 
 model = YOLO('yolov8n.pt')
 cap = cv2.VideoCapture(0)
-API_URL = "http:localhost:8000/explain"
+API_URL = "http://localhost:8000/explain"
 
 while True:
     ret, frame = cap.read()
@@ -14,7 +14,7 @@ while True:
     results = model(frame, stream=True)
     detected_objects = set()
     
-    for result in results:
+    for r in results:
         for box in r.boxes:
             cls = int(box.cls[0])
             label = model.names[cls]

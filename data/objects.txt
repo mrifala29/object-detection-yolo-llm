@@ -1,0 +1,5 @@
+person: A human being, often detected in surveillance and safety systems.
+bottle: A container used to store liquids, commonly water or beverages.
+chair: Furniture designed for sitting, usually has four legs.
+laptop: A portable personal computer used for work and entertainment.
+cell phone: A handheld device used for communication and internet access.
