@@ -5,8 +5,8 @@ MODEL_NAME = "llama3.2:3b"
 
 def explain(context, objects):
     prompt = f"""
-You are an AI assistant.
-Explain the following detected objects in simple and clear terms.
+You MUST use the following context to answer.
+If the information is not in the context, say you don't know.
 
 Detected objects:
 {objects}
