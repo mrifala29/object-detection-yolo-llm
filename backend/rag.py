@@ -9,7 +9,7 @@ class RAG:
         self.texts = []
         with open(path, 'r') as f:
             for line in f:
-                self.text.append(line.strip())
+                self.texts.append(line.strip())
                 
         embeddings = self.model.encode(self.texts)
         self.index = faiss.IndexFlatL2(embeddings.shape[1])

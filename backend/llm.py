@@ -1,7 +1,7 @@
 import requests
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
-MODEL_NAME = "llama3.1:8b"
+MODEL_NAME = "llama3.2:3b"
 
 def explain(context, objects):
     prompt = f"""
@@ -24,4 +24,14 @@ Context information:
         }
     )
 
-    return response.json()["response"]
+    data = response.json()
+
+    print("OLLAMA RAW RESPONSE:", data)
+
+    if "response" in data:
+        return data["response"]
+
+    if "message" in data and "content" in data["message"]:
+        return data["message"]["content"]
+
+    return "LLM did not return a valid response."

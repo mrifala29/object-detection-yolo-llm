@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from rag import RAG
-from llm import explain
+from backend.rag import RAG
+from backend.llm import explain
 
 app = FastAPI()
 rag = RAG()
